@@ -1,6 +1,9 @@
 const express = require("express");
 const hbs = require("express-handlebars");
 
+const routes = require("./routes/routes");
+const goal = require("./routes/goal");
+
 const server = express();
 
 module.exports = server;
@@ -14,6 +17,11 @@ server.engine(
 );
 server.set("view engine", "hbs");
 
-server.get("/", (req, res) => {
-  res.send("Lockdown Goal Tracker");
+server.use("/", routes);
+server.use("/goals/:id", goal);
+
+/* STRETCH
+server.get("/goal/edit/:id", (req, res) => {
+  res.redirect("goal.html");
 });
+*/
