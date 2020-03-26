@@ -1,23 +1,22 @@
 // This module should contain the functions for adding, editing our data
-module.exports = {};
+const path = require("path");
+const fs = require("fs");
 
-function addTime(data, callBack) {
-  const fileName = path.join(__dirname, +"user.json");
+module.exports = {
+  addTime
+};
+
+function addTime(data, file, callBack) {
+  const fileName = path.join(__dirname, file + ".json");
   fs.readFile(fileName, (err, contents) => {
-    if (err) return console.log(`can't load`);
+    if (err) return console.log(err);
     const json = JSON.parse(contents);
-    const index = data.id + 1;
+    const index = data.id - 1;
     json[index].progressHours = json[index].progressHours + data.hours;
     const string = JSON.stringify(json, null, 2);
     fs.writeFile(fileName, string, "utf-8", callBack);
   });
 }
-
-let data = {
-  id: 1
-};
-
-// addTime(data, err)
 
 // //control width of 'green' div for the progress bar state
 // class ProgressBar {

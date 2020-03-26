@@ -3,21 +3,21 @@
     "id": "1",
     "goal": "guitar practice",
     "targetHours": 20,
-    "progressHours": 0,
+    "progressHours": 4,
     "color": "blue"
   },
   {
     "id": "2",
     "goal": "reading",
     "targetHours": 10,
-    "progressHours": 0,
+    "progressHours": 4,
     "color": "red"
   },
   {
     "id": "3",
     "goal": "cooking",
     "targetHours": 15,
-    "progressHours": 0,
+    "progressHours": 6,
     "color": "green"
   }
 ]

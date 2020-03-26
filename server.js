@@ -16,8 +16,12 @@ server.engine(
   })
 );
 server.set("view engine", "hbs");
+server.use(express.urlencoded({ extended: false }));
+server.use(express.static("public"));
 
-server.use("/", routes);
+server.get("/", (req, res) => {
+  res.render();
+});
 server.use("/goals/:id", goal);
 
 /* STRETCH

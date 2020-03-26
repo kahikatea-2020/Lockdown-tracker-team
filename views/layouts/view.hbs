@@ -1,8 +1,12 @@
-<div class="">
-
+<div class="container">
+    {{#each goal}}
+    <div class="goal-list">
+        <a href="/goal/{{id}}"><img class="img-goal" src="{{image}}" alt="{{name}}"></a>
+    </div>
+    {{/each}}
 </div>
 
-<div class="progress-bar">
+{{!-- <div class="progress-bar">
     <div class="progress-bar-value">50%</div>
     <div class="progress-bar-fill"></div>
-</div>
+</div> --}}
