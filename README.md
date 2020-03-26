@@ -1,18 +1,24 @@
 # MVP
 
 - Clear and understandable UI
-- Ability to add goals
-- Ability to add progress
-- Route for main page and individual goals
-- Utils.js for read and write functionality
+- use express-handlebars
+- create Route for main page
+- Dynamic route for goals
+- Ability to add goals (html forms)
+- Ability to add progress (html forms)
+- Utils.js for helper functions
 - Testing
-- Have we pushed yet?
 
 # Stretch
 
 - Colour coding of progress bars
-- Ability to edit goals, names, targets, etc
-- User profiles
-- Multiple users? (can't be done without a database)
+- CRUD operation feature (specifically update and delete)
+- Add animation to CSS
 - Heroku deployment
 - Responsive UI
+
+## Super Stretch
+
+- Data persist (add database)
+- User authentication
+- Multiple users
