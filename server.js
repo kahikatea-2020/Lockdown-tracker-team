@@ -16,5 +16,5 @@ server.set("view engine", "hbs");
 server.use(express.static("public"));
 server.use(express.urlencoded({ extended: false }));
 
-server.use("/", require("./route/routes"));
+server.use("/", require("./route/home"));
 server.use("/goal", require("./route/goal"));

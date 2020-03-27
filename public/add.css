@@ -1,0 +1,25 @@
+.addContainer {
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+}
+
+.addInputContainer {
+  margin-bottom: 1rem;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+}
+
+.addFormContainer {
+  max-width: 500px;
+  background-color: #dcdcdc;
+  padding: 2rem;
+  border: 1px solid black;
+}
+
+input.add {
+  padding: 0.3rem 0.2rem;
+  border-radius: 2px;
+}

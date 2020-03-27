@@ -5,7 +5,7 @@ module.exports = {
   addTime,
   readGoal,
   readAllGoal,
-  editGoal,
+  addProgress,
   addGoal
 };
 
@@ -13,7 +13,7 @@ const fileName = path.resolve("user.json");
 
 function addTime(data, callBack) {
   fs.readFile(fileName, (err, contents) => {
-    if (err) return new Error("unable to load");
+    if (err) return callBack(new Error("unable to load"));
     const json = JSON.parse(contents);
     const index = data.id - 1;
     json.goals[index].progressHours = json[index].progressHours + data.hours;
@@ -35,26 +35,28 @@ function readAllGoal(callback) {
 }
 
 function addGoal(data, callback) {
-  const { goal, targetHours, progressHours, color } = data;
+  const { goal, targetHours, color, image } = data;
   readAllGoal((err, viewData) => {
     try {
-      let lastIndex = viewData.goals.reduce((a, v) =>
+      const lastIndex = viewData.goals.reduce((a, v) =>
         a.id > v.id ? a : (a = v)
       ).id;
       let newData = viewData;
       newData.goals.push({
-        id: +lastIndex + 1,
+        id: Number(lastIndex) + 1,
         goal,
         targetHours,
-        progressHours,
-        color
+        progressHours: 0,
+        remainingHours: 0,
+        color,
+        image
       });
       fs.writeFile(fileName, JSON.stringify(newData, null, 2), e => {
         if (e) return callback("error in writing");
         callback(null, newData);
       });
     } catch {
-      console.log("add goal error");
+      callback("Add goal error");
     }
   });
 }
@@ -72,7 +74,7 @@ function readGoal(id, callback) {
   });
 }
 
-function editGoal(id, progressHours, callback) {
+function addProgress(id, progressHours, callback) {
   readAllGoal((err, viewData) => {
     if (err) return callback("Error in reading goal");
     try {
@@ -84,8 +86,10 @@ function editGoal(id, progressHours, callback) {
             id,
             goal: g.goal,
             targetHours: g.targetHours,
-            progressHours: g.progressHours + progressHours,
-            color: g.color
+            progressHours: g.progressHours + Number(progressHours),
+            remainingHours: g.remainingHours - Number(progressHours),
+            color: g.color,
+            image: g.image
           };
         }
         return g;

@@ -1,18 +1,25 @@
-<form action="" method="POST">
-    <div>
-        <label>Goal</label>
-        <input type="text" name="goal">
+<div class="addContainer">
+    <div class="addFormContainer">
+        <form action="/goal/addGoal" method="POST">
+            <div class="addInputContainer">
+                <div class="label">Goal</div>
+                <input class="add" type="text" name="goal">
+            </div>
+            <div class="addInputContainer">
+                <div class="label">Target Hours</div>
+                <input class="add" type="number" name="targetHours">
+            </div>
+            <div class="addInputContainer">
+                <div class="label">Color</div>
+                <input class="add" type="color" name="color">
+            </div>
+            <div class="addInputContainer">
+                <div class="label">Image url</div>
+                <input class="add" type="text" name="image">
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
-    <div>
-        <label>Target Hours</label>
-        <input type="text" name="targetHours">
-    </div>
-    <div>
-        <label>Progress Hous</label>
-        <input type="text" name="progressHours">
-    </div>
-    <div>
-        <label>Color</label>
-        <input type="text" name="color">
-    </div>
-</form>
+</div>
