@@ -2,10 +2,8 @@
     {{#each goals}}
     <a href="/goal/{{id}}" style="text-decoration: none; color: black">
         <div class="container">
-            <h1 class="title">Your goal is {{goal}}</h1>
-
-            <h2>Your target is: {{targetHours}} hours</h2>
-
+            <h1 class="title">{{goal}}</h1>
+            <h2>target: {{targetHours}} hours</h2>
             <img class="picture" src='{{image}}'>
         </div>
     </a>

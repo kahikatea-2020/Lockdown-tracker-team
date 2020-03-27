@@ -5,7 +5,7 @@ module.exports = {
   addTime,
   readGoal,
   readAllGoal,
-  editGoal,
+  addProgress,
   addGoal
 };
 
@@ -13,7 +13,7 @@ const fileName = path.resolve("user.json");
 
 function addTime(data, callBack) {
   fs.readFile(fileName, (err, contents) => {
-    if (err) return new Error("unable to load");
+    if (err) return callBack(new Error("unable to load"));
     const json = JSON.parse(contents);
     const index = data.id - 1;
     json.goals[index].progressHours = json[index].progressHours + data.hours;
@@ -38,7 +38,7 @@ function addGoal(data, callback) {
   const { goal, targetHours, progressHours, color } = data;
   readAllGoal((err, viewData) => {
     try {
-      let lastIndex = viewData.goals.reduce((a, v) =>
+      const lastIndex = viewData.goals.reduce((a, v) =>
         a.id > v.id ? a : (a = v)
       ).id;
       let newData = viewData;
@@ -55,7 +55,7 @@ function addGoal(data, callback) {
         callback(null, newData);
       });
     } catch {
-      console.log("add goal error");
+      callback("Add goal error");
     }
   });
 }
@@ -73,7 +73,7 @@ function readGoal(id, callback) {
   });
 }
 
-function editGoal(id, progressHours, callback) {
+function addProgress(id, progressHours, callback) {
   readAllGoal((err, viewData) => {
     if (err) return callback("Error in reading goal");
     try {

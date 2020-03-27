@@ -5,7 +5,7 @@
       "goal": "Guitar Practice",
       "targetHours": 20,
       "progressHours": 0,
-      "remainingHours": 20,
+      "remainingHours": 0,
       "color": "blue",
       "image": "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
     },
@@ -13,8 +13,8 @@
       "id": "2",
       "goal": "Reading",
       "targetHours": 10,
-      "progressHours": 0,
-      "remainingHours": 10,
+      "progressHours": 2,
+      "remainingHours": 8,
       "color": "red",
       "image": "https://images.unsplash.com/photo-1553729784-e91953dec042?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
     },

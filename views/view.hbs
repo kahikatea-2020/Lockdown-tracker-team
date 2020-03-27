@@ -1,1 +1,22 @@
 {{!-- this hbs should only show the selected goal --}}
+<div class="wrapper">
+    <div class="container">
+        <a href="../">
+            <img id="backButton" src="https://image.flaticon.com/icons/svg/93/93634.svg">
+        </a>
+
+        <h2> Your goal is {{goal}} </h2>
+        <h2> Target Do: {{targetHours}} </h2>
+        <h2> Progress Hours: {{progressHours}} </h2>
+        <img class="picture" src='{{image}}'>
+        <form class="form" action="/goal/addProgress/{{id}}" method="post">
+            <div>
+                <label for="progressHours" class="form-item">
+                    Hours Done Today:
+                </label>
+                <input class="input" type="number" name="progressHours" max={{remainingHours}}>
+            </div>
+            <input type="submit" name="" value="Submit">
+        </form>
+    </div>
+</div>
