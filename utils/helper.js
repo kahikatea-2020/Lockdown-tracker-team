@@ -35,7 +35,7 @@ function readAllGoal(callback) {
 }
 
 function addGoal(data, callback) {
-  const { goal, targetHours, progressHours, color } = data;
+  const { goal, targetHours, color, image } = data;
   readAllGoal((err, viewData) => {
     try {
       const lastIndex = viewData.goals.reduce((a, v) =>
@@ -46,9 +46,10 @@ function addGoal(data, callback) {
         id: Number(lastIndex) + 1,
         goal,
         targetHours,
-        progressHours,
+        progressHours: 0,
         remainingHours: 0,
-        color
+        color,
+        image
       });
       fs.writeFile(fileName, JSON.stringify(newData, null, 2), e => {
         if (e) return callback("error in writing");
