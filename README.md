@@ -9,7 +9,7 @@
 
 # Stretch
 
-- Ability to add goals (html forms)
+- Ability to add goals (html forms) - done
 - Colour coding of progress bars
 - CRUD operation feature (specifically update and delete)
 - Add animation to CSS
