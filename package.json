@@ -4,7 +4,8 @@
   "description": "- Clear and understandable UI\r - Ability to add goals\r - Ability to add progress\r - Route for main page and individual goals\r - Utils.js for read and write functionality\r - Testing\r - Have we pushed yet?",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "test": "jest",
     "start": "node index.js"
   },
   "author": "",

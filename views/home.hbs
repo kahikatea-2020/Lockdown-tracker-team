@@ -1,0 +1,11 @@
+<div class="wrapper">
+    {{#each goals}}
+    <div class="container">
+        <h1 class="title">Your goal is: {{goal}}</h1>
+
+        <h2>You need to hit {{targetHours}} hours</h2>
+
+        <a href="/goal/{{id}}" class="sub">Enter</a>
+    </div>
+    {{/each}}
+</div>
