@@ -1,11 +1,13 @@
 <div class="wrapper">
     {{#each goals}}
-    <div class="container">
-        <h1 class="title">Your goal is: {{goal}}</h1>
+    <a href="/goal/{{id}}" style="text-decoration: none;">
+        <div class="container">
+            <h1 class="title">Your goal is {{goal}}</h1>
 
-        <h2>You need to hit {{targetHours}} hours</h2>
+            <h2>Your target is: {{targetHours}} hours</h2>
 
-        <a href="/goal/{{id}}" class="sub">Enter</a>
-    </div>
+            <img class="picture" src='{{image}}'>
+        </div>
+    </a>
     {{/each}}
 </div>

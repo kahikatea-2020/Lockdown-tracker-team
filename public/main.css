@@ -2,11 +2,9 @@ html {
   font-family: "Roboto", sans-serif;
   background-color: floralwhite;
   text-align: center;
+  color: black;
 }
 
-.list {
-  background-color: olive;
-}
 .wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -18,7 +16,7 @@ html {
   border-width: 4px;
   border-color: black;
   width: 450px;
-  height: 450px;
+  height: 500px;
   margin: 8px;
 }
 
@@ -33,13 +31,25 @@ html {
 }
 
 .sub {
-  font-size: 10px !important;
+  font-size: 20px;
 }
 
-/* .header {
-  font-size: 30px;
+/* .footer {
+  background-color: grey;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  width: 100%;
 } */
 
-.footer {
-  width: 100%;
+.picture {
+  width: 400px;
+  height: auto;
+}
+
+#backButton {
+  width: 20px;
+  padding: 5px;
+  float: left;
 }

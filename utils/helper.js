@@ -43,10 +43,11 @@ function addGoal(data, callback) {
       ).id;
       let newData = viewData;
       newData.goals.push({
-        id: +lastIndex + 1,
+        id: Number(lastIndex) + 1,
         goal,
         targetHours,
         progressHours,
+        remainingHours: 0,
         color
       });
       fs.writeFile(fileName, JSON.stringify(newData, null, 2), e => {
@@ -84,8 +85,10 @@ function editGoal(id, progressHours, callback) {
             id,
             goal: g.goal,
             targetHours: g.targetHours,
-            progressHours: g.progressHours + progressHours,
-            color: g.color
+            progressHours: g.progressHours + Number(progressHours),
+            remainingHours: g.remainingHours - Number(progressHours),
+            color: g.color,
+            image: g.image
           };
         }
         return g;

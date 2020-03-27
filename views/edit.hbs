@@ -1,22 +1,29 @@
 {{!-- this hbs should be a form to edit the value of the selected goal --}}
-<div class="container">
-    <h2 class="sub">
-        Your goal is {{goal}}
-    </h2>
+<div class="wrapper">
+    <div class="container">
+        <a href="../">
+            <img id="backButton" src="https://image.flaticon.com/icons/svg/93/93634.svg">
+        </a>
 
-    <h2>
-        Target Do: {{targetHours}}
-    </h2>
-    <h2>
-        Progress Hours: {{progressHours}}
-    </h2>
-    <form class="form" action="/goal/edit/{{id}}" method="post">
+        <h2>
+            Your goal is {{goal}}
+        </h2>
 
-        <label for="progressHours" class="form-item">
-            Hours Done Today:
-            <input type="number" name="progressHours" max={{targetHours}}>
-        </label>
+        <h2>
+            Target Do: {{targetHours}}
+        </h2>
+        <h2>
+            Progress Hours: {{progressHours}}
+        </h2>
+        <img class="picture" src='{{image}}'>
+        <form class="form" action="/goal/edit/{{id}}" method="post">
 
-        <input type="submit" name="" value="Submit">
-    </form>
+            <label for="progressHours" class="form-item">
+                Hours Done Today:
+                <input type="number" name="progressHours" max={{remainingHours}}>
+            </label>
+
+            <input type="submit" name="" value="Submit">
+        </form>
+    </div>
 </div>
