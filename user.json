@@ -1,23 +1,25 @@
-[
-  {
-    "id": "1",
-    "goal": "guitar practice",
-    "targetHours": 20,
-    "progressHours": 0,
-    "color": "blue"
-  },
-  {
-    "id": "2",
-    "goal": "reading",
-    "targetHours": 10,
-    "progressHours": 0,
-    "color": "red"
-  },
-  {
-    "id": "3",
-    "goal": "cooking",
-    "targetHours": 15,
-    "progressHours": 0,
-    "color": "green"
-  }
-]
+{
+  "goals": [
+    {
+      "id": "1",
+      "goal": "guitar practice",
+      "targetHours": 20,
+      "progressHours": "0333",
+      "color": "blue"
+    },
+    {
+      "id": "2",
+      "goal": "reading",
+      "targetHours": 10,
+      "progressHours": 0,
+      "color": "red"
+    },
+    {
+      "id": "3",
+      "goal": "cooking",
+      "targetHours": 15,
+      "progressHours": 0,
+      "color": "green"
+    }
+  ]
+}

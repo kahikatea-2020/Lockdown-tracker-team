@@ -1,0 +1,22 @@
+{{!-- this hbs should be a form to edit the value of the selected goal --}}
+<div class="container">
+    <h2 class="sub">
+        Your goal is {{goal}}
+    </h2>
+
+    <h2>
+        Target Do: {{targetHours}}
+    </h2>
+    <h2>
+        Progress Hours: {{progressHours}}
+    </h2>
+    <form class="form" action="/goal/edit/{{id}}" method="post">
+
+        <label for="progressHours" class="form-item">
+            Hours Done Today:
+            <input type="number" name="progressHours" max={{targetHours}}>
+        </label>
+
+        <input type="submit" name="" value="Submit">
+    </form>
+</div>

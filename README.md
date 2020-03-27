@@ -16,6 +16,7 @@
 - Add animation to CSS
 - Heroku deployment
 - Responsive UI
+- Goal reached congrats page
 
 ## Super Stretch
 

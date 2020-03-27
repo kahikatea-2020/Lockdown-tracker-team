@@ -1,7 +1,8 @@
 const request = require("supertest");
 const server = require("./server");
+const jest = require("jest");
 
-test("Get object when adding a list", done => {
+xtest("Get object when adding a list", done => {
   jest.mock("./", () => ({
     someMethod: "Method"
   }));
@@ -13,3 +14,5 @@ test("Get object when adding a list", done => {
       console.log(res);
     });
 });
+
+test();
